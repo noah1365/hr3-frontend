@@ -80,6 +80,7 @@ import AnalyticsDashboard from './pages/manager/analytics/AnalyticsDashboard';
 import MySalesCommission from './pages/employee/incentives/MySalesCommission';
 import AssignedCommissions from './pages/manager/Incentives/AssignedCommissions';
 import AddedCommissions from './pages/manager/Incentives/AddedCommissions';
+import Test from './pages/public/Test';
 
 const App = () => {
   const { checkAuth, isAuthenticated, user } = useAuthStore();
@@ -234,6 +235,7 @@ const App = () => {
         ) : (
           <div className="flex flex-1 items-center justify-center">
           <Routes>
+            <Route path="/test" element={<Test />} />
             <Route path="/login" element={<LogIn />} />
             <Route path="/verify-account/:token" element={<VerifyAccount />} />
             <Route path="/resend-verification" element={<ResendVerification />} />
