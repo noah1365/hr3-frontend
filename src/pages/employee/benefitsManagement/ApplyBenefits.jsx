@@ -177,24 +177,24 @@ const socket = io(socketURL, { withCredentials: true });
 
       <h2 className="text-xl font-bold mt-10 mb-4">Your Benefit Requests</h2>
       <div className="overflow-x-auto">
-        <table className="table w-full">
-          <thead>
-            <tr className="bg-primary text-white">
-              <th className="border px-4 py-2">#</th>
-              <th className="border px-4 py-2">Benefit Name</th>
-              <th className="border px-4 py-2">Status</th>
-              <th className="border px-4 py-2">Date Requested</th>
+        <table className="min-w-full divide-y divide-gray-200">
+          <thead className="bg-gray-50">
+            <tr>
+              <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">#</th>
+              <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Benefit Name</th>
+              <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Status</th>
+              <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Date Requested</th>
             </tr>
           </thead>
           <tbody>
             {Array.isArray(myRequestBenefits) && myRequestBenefits.length > 0 ? (
               myRequestBenefits.map((benefit, index) => (
                 <tr key={benefit._id} className="text-center">
-                  <td className="border px-4 py-2">{index + 1}</td>
-                  <td className="border px-4 py-2">
+                  <td className="px-6 py-4 text-left text-xs font-semibold text-neutral uppercase tracking-wider">{index + 1}</td>
+                  <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">
                     {benefit.benefitsName.benefitsName || "Unknown"}
                   </td>
-                  <td className="border px-4 py-2">
+                  <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">
                     <span
                       className={`badge ${
                         benefit.status === "Approved"
@@ -207,7 +207,7 @@ const socket = io(socketURL, { withCredentials: true });
                       {benefit.status}
                     </span>
                   </td>
-                  <td className="border px-4 py-2">
+                  <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">
                     {new Date(benefit.createdAt).toLocaleDateString()}
                   </td>
                 </tr>

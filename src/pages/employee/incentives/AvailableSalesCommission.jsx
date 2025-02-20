@@ -58,31 +58,31 @@ const AvailableSalesCommission = () => {
 
       <div>
         <h3 className="text-xl font-semibold mb-3">Available Sales Commissions</h3>
-        <div className="card bg-base-100 shadow-xl">
+        <div className="overflow-x-auto">
           {isLoading ? (
             <p className="text-center p-4">Loading...</p>
           ) : (
-            <table className="table w-full">
-              <thead>
-                <tr className="bg-primary text-white">
-                  <th className="border px-4 py-2">Sales Commission Name</th>
-                  <th className="border px-4 py-2">Target Amount (₱)</th>
-                  <th className="border px-4 py-2">Commission Rate (%)</th>
-                  <th className="border px-4 py-2">Date</th>
-                  <th className="border px-4 py-2">Action</th>
+            <table className="min-w-full divide-y divide-gray-200">
+              <thead className="bg-gray-50">
+                <tr>
+                  <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Sales Commission Name</th>
+                  <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Target Amount (₱)</th>
+                  <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Commission Rate (%)</th>
+                  <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Date</th>
+                  <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Action</th>
                 </tr>
               </thead>
               <tbody>
                 {allSalesCommission.length > 0 ? (
                   allSalesCommission.map((commission) => (
-                    <tr key={commission._id} className="hover:bg-neutral hover:text-white">
-                      <td className="border px-4 py-2">{commission.salesCommissionName}</td>
-                      <td className="border px-4 py-2">{commission.targetAmount?.toFixed(2) || "0.00"}</td>
-                      <td className="border px-4 py-2">{commission.commissionRate?.toFixed(2) || "0.00"}</td>
-                      <td className="border px-4 py-2">
+                    <tr key={commission._id} className="hover:bg-gray-300 hover:text-white">
+                      <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{commission.salesCommissionName}</td>
+                      <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{commission.targetAmount?.toFixed(2) || "0.00"}</td>
+                      <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{commission.commissionRate?.toFixed(2) || "0.00"}</td>
+                      <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">
                         {commission.createdAt ? new Date(commission.createdAt).toLocaleDateString() : "N/A"}
                       </td>
-                      <td className="border px-4 py-2 text-green-500 font-bold">
+                      <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">
                         <button
                           onClick={() => handleAssign(commission._id, commission.status)}
                           className="btn btn-sm btn-success"

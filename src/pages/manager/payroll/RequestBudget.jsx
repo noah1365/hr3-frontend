@@ -83,22 +83,22 @@ const RequestBudget = () => {
       {/* Budget Requests Table */}
       <div className="mt-6">
         <h2 className="text-xl font-semibold mb-4">Submitted Budget Requests</h2>
-        <table className="table-auto w-full border bg-gray-50 shadow-md rounded-lg">
-          <thead className="bg-primary text-white">
+        <table className="min-w-full divide-y divide-gray-200">
+          <thead className="bg-gray-50">
             <tr>
-              <th className="border p-2">ID</th>
-              <th className="border p-2">Date</th>
-              <th className="border p-2">Reason</th>
-              <th className="border p-2">Status</th>
+              <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">ID</th>
+              <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Date</th>
+              <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Reason</th>
+              <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Status</th>
             </tr>
           </thead>
           <tbody>
             {budgetRequests.map((request) => (
-              <tr key={request.id} className="hover:bg-gray-100 transition-colors">
-                <td className="border p-2 text-center">{request.id}</td>
-                <td className="border p-2 text-center">{request.date}</td>
-                <td className="border p-2">{request.reason}</td>
-                <td className="border p-2 text-center">{request.status}</td>
+              <tr key={request.id} className="hover:bg-gray-300 hover:text-white">
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{request.id}</td>
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{request.date}</td>
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{request.reason}</td>
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{request.status}</td>
               </tr>
             ))}
           </tbody>

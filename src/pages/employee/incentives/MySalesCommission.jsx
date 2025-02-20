@@ -259,31 +259,31 @@ const MySalesCommission = () => {
       {myAddedSales.length === 0 ? (
         <p className="text-center">No added commissions available.</p>
       ) : (
-        <table className="table w-full mb-4">
-          <thead>
-            <tr className="bg-primary text-white">
-              <th className="border px-4 py-2">Commission Name</th>
-              <th className="border px-4 py-2">Target Amount</th>
-              <th className="border px-4 py-2">Commission Rate</th>
-              <th className="border px-4 py-2">Sales Amount</th>
-              <th className="border px-4 py-2">Sales Proof</th>
-              <th className="border px-4 py-2">Confirmation Status</th>
+        <table className="min-w-full divide-y divide-gray-200">
+          <thead className="bg-gray-50">
+            <tr>
+              <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Commission Name</th>
+              <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Target Amount</th>
+              <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Commission Rate</th>
+              <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Sales Amount</th>
+              <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Sales Proof</th>
+              <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Confirmation Status</th>
             </tr>
           </thead>
           <tbody>
             {myAddedSales?.map((commission) => (
-              <tr key={commission._id} className="hover:bg-neutral hover:text-white">
-                <td className="border px-4 py-2">
+              <tr key={commission._id} className="hover:bg-gray-300 hover:text-white">
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">
                   {commission.salesCommissionId?.salesCommissionName ||
                     "Unnamed Commission"}
                 </td>
-                <td className="border px-4 py-2">
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">
                   {commission.salesCommissionId?.targetAmount || "N/A"}
                 </td>
-                <td className="border px-4 py-2">
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">
                   {commission.salesCommissionId?.commissionRate || "N/A"}
                 </td>
-                <td className="border px-4 py-2">
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">
                   {commission.salesAmount || "N/A"}
                 </td>
                 <td className="border border-gray-300 px-4 py-2">
@@ -303,7 +303,7 @@ const MySalesCommission = () => {
                     "No Image"
                   )}
                 </td>
-                <td className="border px-4 py-2">
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">
                   {commission.confirmationStatus || "Pending"}
                 </td>
               </tr>

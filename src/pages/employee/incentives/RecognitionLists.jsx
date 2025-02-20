@@ -14,29 +14,29 @@ const RecognitionLists = () => {
       <h1 className="text-3xl text-center font-semibold mb-6">Recognition Programs Lists</h1>
 
       <div>
-        <table className="table w-full mt-4">
-          <thead>
+        <table className="min-w-full divide-y divide-gray-200">
+          <thead className="bg-gray-50">
             <tr className="bg-primary text-white">
-              <th>Employee</th>
-              <th>Award Name</th>
-              <th>Description</th>
-              <th>Reward Type</th>
-              <th>Reward Value</th>
-              <th>Status</th>
+              <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Employee</th>
+              <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Award Name</th>
+              <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Description</th>
+              <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Reward Type</th>
+              <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Reward Value</th>
+              <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Status</th>
             </tr>
           </thead>
           <tbody>
             {Array.isArray(allRecognitionPrograms) && allRecognitionPrograms.length > 0 ? (
               allRecognitionPrograms.map((program, index) => (
                 <tr key={index} className="hover:bg-neutral hover:text-white">
-                  <td>
+                 <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">
                     {program?.employeeId?.firstName ?? "Unknown"} {program?.employeeId?.lastName ?? ""}
                   </td>
-                  <td>{program?.awardName ?? "N/A"}</td>
-                  <td>{program?.description ?? "N/A"}</td>
-                  <td>{program?.rewardType ?? "N/A"}</td>
-                  <td>{program?.rewardValue ?? "0"}</td>
-                  <td>{program?.status ?? "Pending"}</td>
+                 <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{program?.awardName ?? "N/A"}</td>
+                 <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{program?.description ?? "N/A"}</td>
+                 <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{program?.rewardType ?? "N/A"}</td>
+                 <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{program?.rewardValue ?? "0"}</td>
+                 <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{program?.status ?? "Pending"}</td>
                 </tr>
               ))
             ) : (

@@ -50,22 +50,22 @@ const MyOvertimeBonuses = () => {
       <h2 className="text-2xl font-bold mb-4 text-center">Overtime Records</h2>
       <table className="min-w-full bg-white shadow-lg rounded-lg border border-gray-200">
         <thead>
-          <tr className="bg-gray-200 text-gray-600">
-            <th className="py-3 px-4 text-left border-b">Date</th>
-            <th className="py-3 px-4 text-left border-b">Hours</th>
-            <th className="py-3 px-4 text-left border-b">Rate</th>
-            <th className="py-3 px-4 text-left border-b">Bonus</th>
-            <th className="py-3 px-4 text-left border-b">Overtime Pay</th>
+          <tr>
+            <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Date</th>
+            <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Hours</th>
+            <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Rate</th>
+            <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Bonus</th>
+            <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Overtime Pay</th>
           </tr>
         </thead>
         <tbody>
           {overtimeData.map((item, index) => (
-            <tr key={index} className="border-b border-gray-200 hover:bg-gray-100">
-              <td className="py-2 px-4">{item.date}</td>
-              <td className="py-2 px-4">{item.hours}</td>
-              <td className="py-2 px-4">₱{item.rate.toLocaleString()}</td>
-              <td className="py-2 px-4">₱{item.bonus.toLocaleString()}</td>
-              <td className="py-2 px-4">₱{(item.hours * item.rate).toLocaleString()}</td> {/* Overtime Pay for each record */}
+            <tr key={index} className="hover:bg-gray-300 hover:text-white">
+              <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{item.date}</td>
+              <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{item.hours}</td>
+              <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">₱{item.rate.toLocaleString()}</td>
+              <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">₱{item.bonus.toLocaleString()}</td>
+              <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">₱{(item.hours * item.rate).toLocaleString()}</td> {/* Overtime Pay for each record */}
             </tr>
           ))}
         </tbody>

@@ -251,27 +251,27 @@ const generatePassword = () => {
         <div className="card w-full bg-base-100 shadow-xl">
           <div className="card-body">
             <div className="overflow-x-auto">
-              <table className="table w-full mb-4">
-                <thead>
-                  <tr className="bg-primary text-white">
-                    <th className="border px-4 py-2">Lastname</th>
-                    <th className="border px-4 py-2">Firstname</th>
-                    <th className="border px-4 py-2">Email</th>
-                    <th className="border px-4 py-2">Position</th>
-                    <th className="border px-4 py-2">Role</th>
-                    <th className="border px-4 py-2">Status</th>
+              <table className="min-w-full divide-y divide-gray-200">
+                <thead className='bg-gray-50'>
+                  <tr>
+                    <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Lastname</th>
+                    <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Firstname</th>
+                    <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Email</th>
+                    <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Position</th>
+                    <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Role</th>
+                    <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Status</th>
                   </tr>
                 </thead>
                 <tbody>
                 {Array.isArray(filteredUsers) && filteredUsers.length > 0 ? (
                     filteredUsers.map((user) => (
-                      <tr key={user._id} className="hover:bg-neutral hover:text-white">
-                        <td className="border px-4 py-2">{user.lastName || 'N/A'}</td>
-                        <td className="border px-4 py-2">{user.firstName || 'N/A'}</td>
-                        <td className="border px-4 py-2">{user.email || 'N/A'}</td>
-                        <td className="border px-4 py-2">{user.position || 'N/A'}</td>
-                        <td className="border px-4 py-2">{user.role || 'N/A'}</td>
-                        <td className="border px-4 py-2">
+                      <tr key={user._id} className="hover:bg-gray-300 hover:text-white">
+                        <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{user.lastName || 'N/A'}</td>
+                        <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{user.firstName || 'N/A'}</td>
+                        <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{user.email || 'N/A'}</td>
+                        <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{user.position || 'N/A'}</td>
+                        <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{user.role || 'N/A'}</td>
+                        <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">
                         {user.verified ? (
                           <span className="text-green-600 font-semibold">
                             <i className="fas fa-check-circle"></i> Verified

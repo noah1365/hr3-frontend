@@ -14,21 +14,21 @@ const EIncentivesOverview = () => {
         <div className="relative max-w-4xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-2xl">
             <h2 className="text-2xl font-bold text-center mb-4">Incentive Overview</h2>
 
-            <table className="table w-full mb-4">
-                <thead>
-                    <tr className='bg-primary text-white'>
-                        <th className='border px-4 py-2'>Incentives Name</th>
-                        <th className='border px-4 py-2'>Description</th>
-                        <th className='border px-4 py-2'>Incentives Type</th>
+            <table className="min-w-full divide-y divide-gray-200">
+                <thead className='overflow-x-auto'>
+                    <tr>
+                        <th className='px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider'>Incentives Name</th>
+                        <th className='px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider'>Description</th>
+                        <th className='px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider'>Incentives Type</th>
                     </tr>
                 </thead>
                 <tbody>
                     {Array.isArray(incentives) && incentives.length > 0 ? (
                         incentives.map((incentive) => (
-                            <tr key={`${incentive._id}-${incentive.incentivesName}`}className="hover:bg-neutral hover:text-white">
-                                <td className='border px-4 py-2'>{incentive.incentivesName || 'N/A'}</td>
-                                <td className='border px-4 py-2'>{incentive.incentivesDescription || 'N/A'}</td>
-                                <td className='border px-4 py-2'>{incentive.incentivesType || 'N/A'}</td>
+                            <tr key={`${incentive._id}-${incentive.incentivesName}`}className="hover:bg-gray-300 hover:text-white">
+                                <td className='px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider'>{incentive.incentivesName || 'N/A'}</td>
+                                <td className='px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider'>{incentive.incentivesDescription || 'N/A'}</td>
+                                <td className='px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider'>{incentive.incentivesType || 'N/A'}</td>
                             </tr>
                         ))
                     ) : (

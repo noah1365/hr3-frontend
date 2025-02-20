@@ -140,19 +140,19 @@ const IncentiveRequest = () => {
                     <p className="text-center text-gray-500">Loading requests...</p>
                 ) : requests.length > 0 ? (
                     <div className="overflow-x-auto">
-                        <table className="table w-full mb-4">
-                            <thead>
-                                <tr className="bg-primary text-white">
-                                    <th className="border px-4 py-2">Incentive Type</th>
-                                    <th className="border px-4 py-2">Comments</th>
-                                    <th className="border px-4 py-2">Status</th>
+                        <table className="min-w-full divide-y divide-gray-200">
+                            <thead className='overflow-x-auto'>
+                                <tr>
+                                    <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Incentive Type</th>
+                                    <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Comments</th>
+                                    <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Status</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {requests.map((request, index) => (
-                                    <tr key={index} className="hover:bg-neutral hover:text-white">
-                                        <td className="px-4 py-2">{request.incentiveType}</td>
-                                        <td className="px-4 py-2">
+                                    <tr key={index} className="hover:bg-gray-300 hover:text-white">
+                                        <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{request.incentiveType}</td>
+                                        <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">
                                             <div>
                                                 {expandedCommentIndex === index ? (
                                                     <p>{request.comments}</p>
@@ -169,7 +169,7 @@ const IncentiveRequest = () => {
                                                 )}
                                             </div>
                                         </td>
-                                        <td className="px-4 py-2">{getStatusBadge(request.status)}</td>
+                                        <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{getStatusBadge(request.status)}</td>
                                     </tr>
                                 ))}
                             </tbody>

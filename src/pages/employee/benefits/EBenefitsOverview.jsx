@@ -14,24 +14,24 @@ const EBenefitsOverview = () => {
     <div className="relative max-w-4xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-2xl">
       <h1 className="text-3xl font-bold mb-4 text-center">Benefits Overview</h1>
 
-      <div className="mb-4">
-        <table className="table w-full mb-4">
-          <thead>
-            <tr className="bg-primary text-white">
-              <th className="border px-4 py-2">Benefits Name</th>
-              <th className="border px-4 py-2">Description</th>
-              <th className="border px-4 py-2">Benefits Type</th>
-              <th className="border px-4 py-2">Require Request</th>
+      <div className="overflow-x-auto">
+        <table className="min-w-full divide-y divide-gray-200">
+          <thead className="bg-gray-50">
+            <tr>
+              <th className="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">Benefits Name</th>
+              <th className="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">Description</th>
+              <th className="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">Benefits Type</th>
+              <th className="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">Require Request</th>
             </tr>
           </thead>
           <tbody>
             {Array.isArray(benefits) && benefits.length > 0 ? (
               benefits.map((benefit) => (
-                <tr key={`${benefit._id}-${benefit.benefitsName}`} className="hover:bg-neutral hover:text-white">
-                  <td className="border px-4 py-2">{benefit.benefitsName || 'N/A'}</td>
-                  <td className="border px-4 py-2">{benefit.benefitsDescription || 'N/A'}</td>
-                  <td className="border px-4 py-2">{benefit.benefitsType || 'N/A'}</td>
-                  <td className="border px-4 py-2">{benefit.requiresRequest ? 'Yes' : 'No'}</td>
+                <tr key={`${benefit._id}-${benefit.benefitsName}`} className="hover:bg-gray-300 hover:text-white">
+                  <td className="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">{benefit.benefitsName || 'N/A'}</td>
+                  <td className="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">{benefit.benefitsDescription || 'N/A'}</td>
+                  <td className="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">{benefit.benefitsType || 'N/A'}</td>
+                  <td className="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">{benefit.requiresRequest ? 'Yes' : 'No'}</td>
                 </tr>
               ))
             ) : (

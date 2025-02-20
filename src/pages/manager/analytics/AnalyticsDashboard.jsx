@@ -113,38 +113,38 @@ const AnalyticsDashboard = () => {
           </ResponsiveContainer>
         </div>
 
-        <table className="table w-full mb-4">
-          <thead>
-            <tr className="bg-primary text-white">
-              <th className="border px-4 py-2">Employee</th>
-              <th className="border px-4 py-2">Attendance (%)</th>
-              <th className="border px-4 py-2">Absences</th>
-              <th className="border px-4 py-2">Performance Score</th>
-              <th className="border px-4 py-2">Overtime (Hrs)</th>
-              <th className="border px-4 py-2">Task Completion (%)</th>
-              <th className="border px-4 py-2">Satisfaction Score</th>
-              <th className="border px-4 py-2">Compensation Score</th>
-              <th className="border px-4 py-2">Benefits Score</th>
-              <th className="border px-4 py-2">Incentives Score</th>
-              <th className="border px-4 py-2">Salary Score</th> {/* Added Salary Score */}
-              <th className="border px-4 py-2">Attrition Risk</th>
+        <table className="min-w-full divide-y divide-gray-200">
+          <thead className="bg-gray-50">
+            <tr >
+              <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Employee</th>
+              <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Attendance (%)</th>
+              <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Absences</th>
+              <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Performance Score</th>
+              <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Overtime (Hrs)</th>
+              <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Task Completion (%)</th>
+              <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Satisfaction Score</th>
+              <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Compensation Score</th>
+              <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Benefits Score</th>
+              <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Incentives Score</th>
+              <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Salary Score</th>
+              <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Attrition Risk</th>
             </tr>
           </thead>
           <tbody>
             {currentPageData.map((emp, index) => (
-              <tr key={index} className="hover:bg-neutral hover:text-white">
-                <td className="border px-4 py-2">{emp.name}</td>
-                <td className="border px-4 py-2">{emp.attendance}%</td>
-                <td className="border px-4 py-2">{emp.absent}</td>
-                <td className="border px-4 py-2">{emp.performance}</td>
-                <td className="border px-4 py-2">{emp.overtime}</td>
-                <td className="border px-4 py-2">{emp.taskCompletion}%</td>
-                <td className="border px-4 py-2">{emp.satisfaction}</td>
-                <td className="border px-4 py-2">{emp.compensationScore}</td>
-                <td className="border px-4 py-2">{emp.benefitsScore}</td>
-                <td className="border px-4 py-2">{emp.incentivesScore}</td>
-                <td className="border px-4 py-2">{emp.salaryScore}</td> {/* Added Salary Score */}
-                <td className="border px-4 py-2">{emp.attritionRisk}</td>
+              <tr key={index} className="hover:bg-gray-300 hover:text-white">
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{emp.name}</td>
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{emp.attendance}%</td>
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{emp.absent}</td>
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{emp.performance}</td>
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{emp.overtime}</td>
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{emp.taskCompletion}%</td>
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{emp.satisfaction}</td>
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{emp.compensationScore}</td>
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{emp.benefitsScore}</td>
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{emp.incentivesScore}</td>
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{emp.salaryScore}</td> {/* Added Salary Score */}
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{emp.attritionRisk}</td>
               </tr>
             ))}
           </tbody>

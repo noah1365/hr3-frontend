@@ -48,20 +48,20 @@ const Deductions = () => {
 
             {error && <p className="text-red-500 text-center">{error}</p>}
 
-            <table className="table w-full mb-4">
-                <thead>
-                    <tr className="bg-primary text-white">
-                        <th className="border px-4 py-2">Benefit Name</th>
-                        <th className="border px-4 py-2">Total Amount</th>
-                        <th className="border px-4 py-2">View All Deductions</th>
+            <table className="min-w-full divide-y divide-gray-200">
+                <thead className="bg-gray-50">
+                    <tr>
+                        <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Benefit Name</th>
+                        <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Total Amount</th>
+                        <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">View All Deductions</th>
                     </tr>
                 </thead>
                 <tbody>
                     {benefitList.length > 0 ? (
                         benefitList.map((benefit, index) => (
-                            <tr key={index} className="hover:bg-neutral hover:text-white">
-                                <td>{benefit.benefitsName}</td>
-                                <td>₱{benefit.totalAmount.toFixed(2)}</td>
+                            <tr key={index} className="hover:bg-gray-300 hover:text-white">
+                                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{benefit.benefitsName}</td>
+                                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">₱{benefit.totalAmount.toFixed(2)}</td>
                                 <td>
                                     <button
                                         onClick={() => openModal(benefit.history)}

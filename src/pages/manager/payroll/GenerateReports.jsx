@@ -138,24 +138,24 @@ const GenerateReports = () => {
           <>
             <h2 className="text-2xl font-semibold mb-4">Generated Report</h2>
             <div id="report-table" className="overflow-x-auto">
-              <table className="table w-full border-2 border-gray-300 rounded-lg shadow-lg">
-                <thead>
-                  <tr className="bg-primary text-white">
-                    <th className="p-4">Employee Name</th>
-                    <th className="p-4">Salary</th>
-                    <th className="p-4">Payment Method</th>
-                    <th className="p-4">Status</th>
-                    <th className="p-4">Date</th>
+              <table className="min-w-full divide-y divide-gray-200">
+                <thead className='bg-gray-50'>
+                  <tr>
+                    <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Employee Name</th>
+                    <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Salary</th>
+                    <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Payment Method</th>
+                    <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Status</th>
+                    <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Date</th>
                   </tr>
                 </thead>
                 <tbody>
                   {reportData.map((data, index) => (
-                    <tr key={index} className="hover:bg-neutral hover:text-white">
-                      <td className="border-b p-4">{data.employeeName}</td>
-                      <td className="border-b p-4">₱{data.salary.toFixed(2)}</td>
-                      <td className="border-b p-4">{data.paymentMethod}</td>
-                      <td className="border-b p-4">{data.status}</td>
-                      <td className="border-b p-4">{data.date}</td>
+                    <tr key={index} className="hover:bg-gray-300 hover:text-white">
+                      <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{data.employeeName}</td>
+                      <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">₱{data.salary.toFixed(2)}</td>
+                      <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{data.paymentMethod}</td>
+                      <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{data.status}</td>
+                      <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{data.date}</td>
                     </tr>
                   ))}
                 </tbody>

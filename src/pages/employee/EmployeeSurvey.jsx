@@ -63,17 +63,17 @@ const EmployeeSurvey = () => {
 
           <h3 className="font-semibold mb-4">2. Rate your satisfaction with the following:</h3>
 
-          <table className="table-auto w-full text-left">
-            <thead>
+          <table className="min-w-full divide-y divide-gray-200">
+            <thead className="bg-gray-50">
               <tr>
-                <th className="px-4 py-2 font-semibold">Criteria</th>
-                <th className="px-4 py-2 font-semibold">Rating (1-5)</th>
+                <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Criteria</th>
+                <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Rating (1-5)</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td className="px-4 py-2">Satisfaction with Work Environment</td>
-                <td className="px-4 py-2">
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Satisfaction with Work Environment</td>
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">
                   <div className="flex justify-start">
                     {[1, 2, 3, 4, 5].map((rating) => (
                       <label key={rating} className="cursor-pointer mr-2">
@@ -95,8 +95,8 @@ const EmployeeSurvey = () => {
               {/* Salary Satisfaction with 3 questions */}
               <h2>Salary</h2>
               <tr>
-                <td className="px-4 py-2">Is your salary competitive with industry standards?</td>
-                <td className="px-4 py-2">
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Is your salary competitive with industry standards?</td>
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">
                   <div className="flex justify-start">
                     {[1, 2, 3, 4, 5].map((rating) => (
                       <label key={rating} className="cursor-pointer mr-2">
@@ -115,8 +115,8 @@ const EmployeeSurvey = () => {
                 </td>
               </tr>
               <tr>
-                <td className="px-4 py-2">Are you satisfied with the salary increase process?</td>
-                <td className="px-4 py-2">
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Are you satisfied with the salary increase process?</td>
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">
                   <div className="flex justify-start">
                     {[1, 2, 3, 4, 5].map((rating) => (
                       <label key={rating} className="cursor-pointer mr-2">
@@ -135,8 +135,8 @@ const EmployeeSurvey = () => {
                 </td>
               </tr>
               <tr>
-                <td className="px-4 py-2">Is your salary aligned with your responsibilities?</td>
-                <td className="px-4 py-2">
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Is your salary aligned with your responsibilities?</td>
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">
                   <div className="flex justify-start">
                     {[1, 2, 3, 4, 5].map((rating) => (
                       <label key={rating} className="cursor-pointer mr-2">
@@ -158,8 +158,8 @@ const EmployeeSurvey = () => {
               {/* Benefits Satisfaction with 3 questions */}
               <h2>Benefits</h2>
               <tr>
-                <td className="px-4 py-2">Are you satisfied with the health benefits?</td>
-                <td className="px-4 py-2">
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Are you satisfied with the health benefits?</td>
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">
                   <div className="flex justify-start">
                     {[1, 2, 3, 4, 5].map((rating) => (
                       <label key={rating} className="cursor-pointer mr-2">
@@ -178,8 +178,8 @@ const EmployeeSurvey = () => {
                 </td>
               </tr>
               <tr>
-                <td className="px-4 py-2">Are you satisfied with the benefits plan options?</td>
-                <td className="px-4 py-2">
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Are you satisfied with the benefits plan options?</td>
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">
                   <div className="flex justify-start">
                     {[1, 2, 3, 4, 5].map((rating) => (
                       <label key={rating} className="cursor-pointer mr-2">
@@ -198,8 +198,8 @@ const EmployeeSurvey = () => {
                 </td>
               </tr>
               <tr>
-                <td className="px-4 py-2">Are you satisfied with other company benefits (e.g., wellness, insurance)?</td>
-                <td className="px-4 py-2">
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Are you satisfied with other company benefits (e.g., wellness, insurance)?</td>
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">
                   <div className="flex justify-start">
                     {[1, 2, 3, 4, 5].map((rating) => (
                       <label key={rating} className="cursor-pointer mr-2">
@@ -221,8 +221,8 @@ const EmployeeSurvey = () => {
               {/* Incentives Satisfaction */}
               <h2>Incentives</h2>
               <tr>
-                <td className="px-4 py-2">Are you satisfied with the incentives and rewards program?</td>
-                <td className="px-4 py-2">
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Are you satisfied with the incentives and rewards program?</td>
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">
                   <div className="flex justify-start">
                     {[1, 2, 3, 4, 5].map((rating) => (
                       <label key={rating} className="cursor-pointer mr-2">
@@ -245,8 +245,8 @@ const EmployeeSurvey = () => {
               
               <tr>
                 
-                <td className="px-4 py-2">Are you satisfied with the overall compensation package?</td>
-                <td className="px-4 py-2">
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Are you satisfied with the overall compensation package?</td>
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">
                   <div className="flex justify-start">
                     {[1, 2, 3, 4, 5].map((rating) => (
                       <label key={rating} className="cursor-pointer mr-2">
@@ -265,8 +265,8 @@ const EmployeeSurvey = () => {
                 </td>
               </tr>
               <tr>
-                <td className="px-4 py-2">Do you feel your compensation reflects your contributions to the company?</td>
-                <td className="px-4 py-2">
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Do you feel your compensation reflects your contributions to the company?</td>
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">
                   <div className="flex justify-start">
                     {[1, 2, 3, 4, 5].map((rating) => (
                       <label key={rating} className="cursor-pointer mr-2">
@@ -285,8 +285,8 @@ const EmployeeSurvey = () => {
                 </td>
               </tr>
               <tr>
-                <td className="px-4 py-2">Are you satisfied with the frequency of compensation reviews (annual, bi-annual)?</td>
-                <td className="px-4 py-2">
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Are you satisfied with the frequency of compensation reviews (annual, bi-annual)?</td>
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">
                   <div className="flex justify-start">
                     {[1, 2, 3, 4, 5].map((rating) => (
                       <label key={rating} className="cursor-pointer mr-2">

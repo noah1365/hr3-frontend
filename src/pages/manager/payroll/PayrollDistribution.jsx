@@ -60,14 +60,14 @@ const socket = io(socketURL, { withCredentials: true });
   console.log("Denied Requests:", deniedRequests);
 
   const renderRequests = (requests) => (
-    <table className="table w-full border border-base-300 mb-4">
+    <table className="min-w-full divide-y divide-gray-200">
       <thead>
-        <tr className="bg-primary text-white">
-          <th className="border px-4 py-2">Employee Name</th>
-          <th className="border px-4 py-2">Salary Amount</th>
-          <th className="border px-4 py-2">Payment Method</th>
-          <th className="border px-4 py-2">GCash Number</th>
-          <th className="border px-4 py-2">Actions</th>
+        <tr >
+          <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Employee Name</th>
+          <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Salary Amount</th>
+          <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Payment Method</th>
+          <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">GCash Number</th>
+          <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Actions</th>
         </tr>
       </thead>
       <tbody>

@@ -52,26 +52,26 @@ const {fetchUsers,users} = useAuthStore();
     <div className="container mx-auto p-4">
       <h1 className="text-3xl font-bold mb-8 text-center">Payroll Processing</h1>
       <h2 className="text-xl font-bold mb-4">Attendance Records</h2>
-      <table className="table-auto w-full border-collapse border border-gray-200">
-        <thead>
-          <tr className="bg-primary text-white">
-            <th className="border border-gray-300 px-4 py-2">Employee Name</th>
-            <th className="border border-gray-300 px-4 py-2">Total Hours</th>
-            <th className="border border-gray-300 px-4 py-2">Total Present</th>
-            <th className="border border-gray-300 px-4 py-2">Total Absent</th>
-            <th className="border border-gray-300 px-4 py-2">Total Overtime</th>
-            <th className="border border-gray-300 px-4 py-2">Total Holiday</th>
+      <table className="min-w-full divide-y divide-gray-200">
+        <thead className="bg-gray-50">
+          <tr>
+            <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Employee Name</th>
+            <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Total Hours</th>
+            <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Total Present</th>
+            <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Total Absent</th>
+            <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Total Overtime</th>
+            <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Total Holiday</th>
           </tr>
         </thead>
         <tbody>
           {attendanceData.map((employee, index) => (
-            <tr key={index} className="hover:bg-neutral hover:text-white">
-              <td className="border border-gray-300 px-4 py-2">{employee.employeeName}</td>
-              <td className="border border-gray-300 px-4 py-2">{employee.totalHours}</td>
-              <td className="border border-gray-300 px-4 py-2">{employee.totalPresent}</td>
-              <td className="border border-gray-300 px-4 py-2">{employee.totalAbsent}</td>
-              <td className="border border-gray-300 px-4 py-2">{employee.totalOvertime}</td>
-              <td className="border border-gray-300 px-4 py-2">{employee.totalHoliday}</td>
+            <tr key={index} className="hover:bg-gray-300 hover:text-white">
+              <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{employee.employeeName}</td>
+              <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{employee.totalHours}</td>
+              <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{employee.totalPresent}</td>
+              <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{employee.totalAbsent}</td>
+              <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{employee.totalOvertime}</td>
+              <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{employee.totalHoliday}</td>
             </tr>
           ))}
         </tbody>

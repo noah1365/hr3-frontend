@@ -94,24 +94,24 @@ const PayrollHistory = () => {
       </button>
 
       {filteredData.length > 0 ? (
-        <table className="table table-auto w-full border">
-          <thead>
-            <tr className="bg-primary text-white">
-              <th className="border px-4 py-2">Employee Name</th>
-              <th className="border px-4 py-2">Salary</th>
-              <th className="border px-4 py-2">Payment Method</th>
-              <th className="border px-4 py-2">Status</th>
-              <th className="border px-4 py-2">Date</th>
+        <table className="min-w-full divide-y divide-gray-200">
+          <thead className="bg-gray-50">
+            <tr>
+              <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Employee Name</th>
+              <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Salary</th>
+              <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Payment Method</th>
+              <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Status</th>
+              <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Date</th>
             </tr>
           </thead>
           <tbody>
             {filteredData.map((data, index) => (
-              <tr key={index} className="hover:bg-neutral hover:text-white">
-                <td className="border px-4 py-2">{data.employeeName}</td>
-                <td className="border px-4 py-2">₱{data.salary.toFixed(2)}</td>
-                <td className="border px-4 py-2">{data.paymentMethod}</td>
-                <td className="border px-4 py-2">{data.status}</td>
-                <td className="border px-4 py-2">{data.date}</td>
+              <tr key={index} className="hover:bg-gray-300 hover:text-white">
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{data.employeeName}</td>
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">₱{data.salary.toFixed(2)}</td>
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{data.paymentMethod}</td>
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{data.status}</td>
+                <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{data.date}</td>
               </tr>
             ))}
           </tbody>

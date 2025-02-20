@@ -66,20 +66,20 @@ const SalaryComputation = () => {
 
             <h2 className="text-xl mb-2">Salary Details</h2>
             <div className="overflow-x-auto">
-                <table className="table w-full">
-                    <thead>
-                        <tr className="bg-primary text-white">
-                            <th className="p-4">Employee Name</th>
-                            <th className="p-4">Hourly Rate</th>
-                            <th className="p-4">Working Hours/Day</th>
-                            <th className="p-4">Total Days Worked</th>
-                            <th className="p-4">Base Salary (Earned)</th>
-                            <th className="p-4">Overtime Hours</th>
-                            <th className="p-4">Overtime Pay</th>
-                            <th className="p-4">Bonuses</th>
-                            <th className="p-4">Deductions</th>
-                            <th className="p-4">Net Salary</th>
-                            <th className="p-4">Start Date</th>
+                <table className="min-w-full divide-y divide-gray-200">
+                    <thead className="bg-gray-50">
+                        <tr>
+                            <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Employee Name</th>
+                            <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Hourly Rate</th>
+                            <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Working Hours/Day</th>
+                            <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Total Days Worked</th>
+                            <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Base Salary (Earned)</th>
+                            <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Overtime Hours</th>
+                            <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Overtime Pay</th>
+                            <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Bonuses</th>
+                            <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Deductions</th>
+                            <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Net Salary</th>
+                            <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Start Date</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -87,17 +87,17 @@ const SalaryComputation = () => {
                             const { totalDaysWorked, earnedSalary, overtimePay, netSalary } = calculateSalary(employee);
                             return (
                                 <tr key={employee.id} className="hover:bg-neutral hover:text-white">
-                                    <td className="p-4">{employee.name}</td>
-                                    <td className="p-4">₱{employee.hourlyRate.toLocaleString()}</td>
-                                    <td className="p-4">{employee.workingHoursPerDay} hrs</td>
-                                    <td className="p-4">{totalDaysWorked} days</td>
-                                    <td className="p-4">₱{earnedSalary.toLocaleString()}</td>
-                                    <td className="p-4">{employee.overtimeHours} hrs</td>
-                                    <td className="p-4">₱{overtimePay.toLocaleString()}</td>
-                                    <td className="p-4">₱{employee.bonuses.toLocaleString()}</td>
-                                    <td className="p-4">₱{employee.deductions.toLocaleString()}</td>
-                                    <td className="p-4 font-bold text-green-500">₱{netSalary.toLocaleString()}</td>
-                                    <td className="p-4">{new Date(employee.startDate).toLocaleDateString()}</td>
+                                    <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{employee.name}</td>
+                                    <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">₱{employee.hourlyRate.toLocaleString()}</td>
+                                    <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{employee.workingHoursPerDay} hrs</td>
+                                    <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{totalDaysWorked} days</td>
+                                    <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">₱{earnedSalary.toLocaleString()}</td>
+                                    <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{employee.overtimeHours} hrs</td>
+                                    <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">₱{overtimePay.toLocaleString()}</td>
+                                    <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">₱{employee.bonuses.toLocaleString()}</td>
+                                    <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">₱{employee.deductions.toLocaleString()}</td>
+                                    <td className="px-6 py-4 text-left text-xs uppercase tracking-wider font-bold text-green-500">₱{netSalary.toLocaleString()}</td>
+                                    <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{new Date(employee.startDate).toLocaleDateString()}</td>
                                 </tr>
                             );
                         })}

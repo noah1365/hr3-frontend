@@ -163,25 +163,25 @@ const handleCreateBenefits = async (e) => {
           )}
         </div>
         <div className="hidden md:block">
-        <table className="table w-full mb-4">
-          <thead>
-            <tr className="bg-primary text-white">
-              <th className="border px-4 py-2">Benefits Name</th>
-              <th className="border px-4 py-2">Description</th>
-              <th className="border px-4 py-2">Benefits Type</th>
-              <th className="border px-4 py-2">Require Request</th>
-              <th colSpan={2} className='justify-center border px-4 py-2'>Action</th>
+        <table className="min-w-full divide-y divide-gray-200">
+          <thead className="bg-gray-50">
+            <tr>
+              <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Benefits Name</th>
+              <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Description</th>
+              <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Benefits Type</th>
+              <th className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">Require Request</th>
+              <th colSpan={2} className=' px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider'>Action</th>
             </tr>
           </thead>
           <tbody>
             {Array.isArray(benefits) && benefits.length > 0 ? (
               benefits.map((benefit) => (
-                <tr key={`${benefit._id}-${benefit.benefitsName}`} className="hover:bg-neutral hover:text-white">
-                  <td className="border px-4 py-2">{benefit.benefitsName || 'N/A'}</td>
-                  <td className="border px-4 py-2">{benefit.benefitsDescription || 'N/A'}</td>
-                  <td className="border px-4 py-2">{benefit.benefitsType || 'N/A'}</td>
-                  <td className="border px-4 py-2">{benefit.requiresRequest ? 'Yes' : 'No'}</td>
-                  <td className="border px-4 py-2">
+                <tr key={`${benefit._id}-${benefit.benefitsName}`} className="hover:bg-gray-300 hover:text-white">
+                  <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{benefit.benefitsName || 'N/A'}</td>
+                  <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{benefit.benefitsDescription || 'N/A'}</td>
+                  <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{benefit.benefitsType || 'N/A'}</td>
+                  <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">{benefit.requiresRequest ? 'Yes' : 'No'}</td>
+                  <td className="px-6 py-4 text-left text-xs font-semibold  text-neutral uppercase tracking-wider">
                     <button onClick={() => handleEditBenefit(benefit)} className='btn btn-edit bg-primary text-white'>Edit</button>
                   </td>
                   <td>
@@ -226,7 +226,7 @@ const handleCreateBenefits = async (e) => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <div className="card bg-base-100 shadow-xl">
           <div className="card-body">
-            <h2 className="card-title">Benefit Applied requests</h2>
+            <h2 className="card-title">Benefit applied requests</h2>
             <p>Manage benefits Applied requests here.</p>
             <Link to="/benefits-requested" className="btn btn-primary">
               <button>View Applied Requests</button>
