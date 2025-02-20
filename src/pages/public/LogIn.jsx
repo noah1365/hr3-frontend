@@ -11,9 +11,9 @@ import InputComponents from "../../components/InputComponents";
 import jjmLogo from '../../assets/jjmlogo.jpg';
 
 const LogIn = () => {
-  const [email, setEmail] = useState("");
+  const [identifier, setIdentifier] = useState("");
   const [password, setPassword] = useState("");
-  /* const [verified,setVerified] = useState(false); */
+
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const { login, isAuthenticated ,error, csrfToken} = useAuthStore();
@@ -21,19 +21,18 @@ const LogIn = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-        /* const result = await login(email,password,verified, csrfToken); */
-        const result = await login(email,password, csrfToken);
-        if(!result){
-            if(error){
+        const result = await login(identifier, password);
+        if (!result) {
+            if (error) {
                 console.log("Error message:", error);
-                if(error.toLowerCase().includes("not verified")){
+                if (error.toLowerCase().includes("not verified")) {
                     toast.warn("Your account is not verified. Please verify your account first!");
-                }else{
+                } else {
                     toast.error("Username or password incorrect!");
                 }
             }
             return;
-        }else{
+        } else {
             toast.success("Logged in successfully! Your account is verified.");
         }
     } catch (error) {
@@ -75,14 +74,14 @@ const LogIn = () => {
               <label className="label">
               </label>
               <InputComponents
-                icon={User}
-                type="email"
-                placeholder="Enter your email"
-                className="input input-bordered w-full"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
+        icon={User}
+        type="text"
+        placeholder="Enter your email or username"
+        className="input input-bordered w-full"
+        value={identifier}
+        onChange={(e) => setIdentifier(e.target.value)}
+        required
+    />
             </div>
             <div className="relative">
                 <InputComponents

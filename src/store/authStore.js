@@ -18,15 +18,17 @@ export const useAuthStore = create((set)=>({
 
 
     /* login: async (email, password, verified) => { */
-    login: async (email, password) => {
+    login: async (identifier, password) => {
       try {
         const csrfResponse = await axios.get(`${API_URL}/csrf-token`);
         const csrfToken = csrfResponse.data.csrfToken;
-  
-        const response = await axios.post(`${API_URL}/login`, 
-          /* { email, password, verified },  */
-          { email, password }, 
-          { headers:{ 'csrf-token': csrfToken}});
+
+        const response = await axios.post(
+          `${API_URL}/login`, 
+          { identifier, password },
+          { headers: { 'csrf-token': csrfToken } }
+        );
+
         set({
           isAuthenticated: true,
           user: response.data.user,
