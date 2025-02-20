@@ -167,19 +167,20 @@ const Profile = () => {
       <ToastContainer />
       <div className="flex flex-col items-center mb-6">
       <div>
-        {(user?.uniqueRole?.length === 0 || user?.uniqueRole !== 'employee') && (
-          <div className="mt-4">      
-            <select
-              value={newRole}
-              onChange={(e) => handleChangeRole(e.target.value)}
-              className="border border-gray-300 rounded p-1 w-full mb-2"
-            >
-              <option disabled value="">Select Role</option>
-              <option value="Employee">Employee</option>
-              <option value="Admin">Admin</option>
-            </select>
-          </div>
-        )}
+          {user?.uniqueRole && user.uniqueRole !== "employee" && (
+        <div className="mt-4">      
+          <select
+            value={newRole}
+            onChange={(e) => handleChangeRole(e.target.value)}
+            className="border border-gray-300 rounded p-1 w-full mb-2"
+          >
+            <option disabled value="">Select Role</option>
+            <option value="Employee">Employee</option>
+            <option value="Admin">Admin</option>
+          </select>
+        </div>
+      )}
+
       </div>
         <button className="relative group">
           <img
