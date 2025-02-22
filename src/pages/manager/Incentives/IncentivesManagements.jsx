@@ -264,18 +264,6 @@ const IncentivesManagements = () => {
                         </Link>
                     </div>
                 </div>
-                <div className="card bg-base-100 shadow-xl">
-                    <div className="card-body">
-                        <h2 className="card-title">Performance Metrics</h2>
-                        <p>
-                            Manage and review performance of employee
-                        </p>
-                        <Link to="/performance-metrics" className="btn btn-primary">
-                            <button>Manage Performance</button>
-                        </Link>
-                    </div>
-                </div>
-
             </div>
         </div>
     );

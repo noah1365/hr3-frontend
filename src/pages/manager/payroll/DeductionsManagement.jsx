@@ -41,7 +41,8 @@ const DeductionsManagement = () => {
   
     fetchData();
   }, [fetchBenefit, fetchBenefitDeductions, fetchMyRequestBenefits, fetchBenefitDeductionHistory, fetchUsers, users]);
-  
+  console.log("My Request Benefits:", myRequestBenefits);
+
   const handleAddDeduction = async (e) => {
     e.preventDefault();
   
@@ -96,19 +97,24 @@ const DeductionsManagement = () => {
     }
 };
 
-    const groupedDeductions = deductions.reduce((acc, deduction) => {
-    const employeeKey = `${deduction.employeeId._id}_${deduction.benefitsName._id}`;
-    if (!acc[employeeKey]) {
-      acc[employeeKey] = {
-        employeeName: `${deduction.employeeId.firstName} ${deduction.employeeId.lastName}`,
-        benefitsName: deduction.benefitsName.benefitsName,
-        totalAmount: 0,
-        employeeId: deduction.employeeId._id,
-      };
-    }
-    acc[employeeKey].totalAmount += deduction.amount;
-    return acc;
-  }, {});
+const groupedDeductions = deductions.reduce((acc, deduction) => {
+  const employeeKey = `${deduction.employeeId?.['_id'] || 'Unknown'}_${deduction.benefitsName?.['_id'] || 'Unknown'}`;
+
+  if (!acc[employeeKey]) {
+    acc[employeeKey] = {
+      employeeName: deduction.employeeId
+        ? `${deduction.employeeId.firstName} ${deduction.employeeId.lastName}`
+        : "Unknown Employee",
+      benefitsName: deduction.benefitsName?.benefitsName || "Unknown Benefit",
+      totalAmount: 0,
+      employeeId: deduction.employeeId?._id || "Unknown",
+    };
+  }
+
+  acc[employeeKey].totalAmount += deduction.amount || 0;
+  return acc;
+}, {});
+
 
   const groupedArray = Object.values(groupedDeductions);
   let renderedEmployees = {};
@@ -144,22 +150,15 @@ const DeductionsManagement = () => {
 
         <div className="mb-4">
           <label className="block text-sm font-semibold mb-2">Select Benefit</label>
-          <select
-  value={selectedBenefit || ""}  // Again, set it to an empty string if null
-  onChange={(e) => setSelectedBenefit(e.target.value)} 
-  className="w-full p-2 border border-gray-300 rounded"
->
-  <option value="">Select Benefit</option>
-  {myRequestBenefits && myRequestBenefits.length > 0 ? (
-    benefits.map((benefit) => (
-      <option key={benefit._id} value={benefit._id}>
-        {benefit.benefitsName}
-      </option>
-    ))
-  ) : (
-    <option value="">No benefits available</option>
-  )}
+          <select onChange={(e) => setSelectedBenefit(e.target.value)}>
+    <option value="">Select a Benefit</option>
+    {benefits.map((benefit) => (
+        <option key={benefit._id} value={benefit._id}>
+            {benefit.benefitsName}
+        </option>
+    ))}
 </select>
+
 
 
         </div>

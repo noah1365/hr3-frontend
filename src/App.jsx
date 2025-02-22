@@ -44,11 +44,9 @@ import Deductions from './pages/manager/benefits/Deductions';
 import IncentivesManagements from './pages/manager/Incentives/IncentivesManagements';
 import SalesCommissions from './pages/manager/Incentives/SalesCommissions';
 import IncentivesRequest from './pages/manager/Incentives/IncentivesRequest';
-import PerformanceMetrics from './pages/manager/Incentives/PerformanceMetrics';
 import RecognitionPrograms from './pages/manager/Incentives/RecognitionPrograms';
 
 /* employee */
-import EmployeeList from './pages/EmployeeList';
 
 import Profile from './pages/employee/Profile';
 
@@ -189,7 +187,6 @@ const App = () => {
                       <Route path="/sales-commissions" element={<ProtectedRoute><SalesCommissions /></ProtectedRoute>} />
                       <Route path="/assigned-commissions" element={<ProtectedRoute><AssignedCommissions /></ProtectedRoute>} />
                       <Route path="/added-commissions" element={<ProtectedRoute><AddedCommissions /></ProtectedRoute>} />
-                      <Route path="/performance-metrics" element={<ProtectedRoute><PerformanceMetrics /></ProtectedRoute>} />
                       <Route path="/recognition-programs" element={<ProtectedRoute><RecognitionPrograms /></ProtectedRoute>} />
 
                       {/* Analytics */}
